@@ -39,6 +39,6 @@ while game_is_on:
     if player.ycor() > 290:
         player.reset_position()
         scoreboard.add_level()
-        SPEED *= 0.9
+        SPEED *= 0.85
 
 screen.exitonclick()
