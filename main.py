@@ -20,8 +20,10 @@ screen.onkey(player.go_up, 'Up')
 
 game_is_on = True
 
+SPEED = 0.01
+
 while game_is_on:
-    time.sleep(0.01)
+    time.sleep(SPEED)
     screen.update()
 
     car_manager.create_car()
@@ -30,11 +32,13 @@ while game_is_on:
     for car in car_manager.all_cars:
         if car.distance(player) < 20:
             print('Splat')
+            scoreboard.game_over()
             player.reset_position()
             game_is_on = False
 
     if player.ycor() > 290:
         player.reset_position()
         scoreboard.add_level()
+        SPEED *= 0.9
 
 screen.exitonclick()
