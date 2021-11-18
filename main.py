@@ -22,11 +22,18 @@ screen.onkey(player.go_up, 'Up')
 game_is_on = True
 
 while game_is_on:
-    time.sleep(0.1)
+    time.sleep(0.01)
     screen.update()
+    car.car_move()
 
     if player.ycor() > 290:
         player.reset_position()
         scoreboard.add_level()
+        car.generate_car()
+
+    elif player.distance(car) < 20:
+        print('splat')
+        scoreboard.game_over()
+        game_is_on = False
 
 screen.exitonclick()
