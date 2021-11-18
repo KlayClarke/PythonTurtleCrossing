@@ -1,6 +1,5 @@
 import time
 from car_manager import CarManager
-from car import Car
 from turtle import Screen
 from player import Player
 from scoreboard import Scoreboard
@@ -28,14 +27,14 @@ while game_is_on:
     car_manager.create_car()
     car_manager.move_cars()
 
+    for car in car_manager.all_cars:
+        if car.distance(player) < 20:
+            print('Splat')
+            player.reset_position()
+            game_is_on = False
+
     if player.ycor() > 290:
         player.reset_position()
         scoreboard.add_level()
-
-
-    # elif player.distance(car_manager) < 20:
-    #     print('splat')
-    #     scoreboard.game_over()
-    #     game_is_on = False
 
 screen.exitonclick()
