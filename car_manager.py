@@ -11,7 +11,7 @@ class CarManager:
         self.all_cars = []
 
     def create_car(self):
-        random_chance = random.randint(0, 10)
+        random_chance = random.randint(0, 20)
         if random_chance == 3:
             new_car = Turtle('square')
             new_car.shapesize(stretch_wid=1, stretch_len=2)
