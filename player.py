@@ -1,20 +1,24 @@
-import turtle
-from turtle import Turtle, Screen
+from turtle import Turtle
 
-PLAYER_START_POSITION = (0, -280)
+
+x_position = 0
+y_position = -280
 
 
 class Player(Turtle):
     def __init__(self):
         super().__init__()
+        self.speed('fastest')
         self.penup()
         self.color('black')
         self.shape('turtle')
         self.setheading(90)
-        self.goto(PLAYER_START_POSITION)
+        self.goto(x=x_position, y=y_position)
 
-    def player_move_up(self):
-        new_y_value = self.ycor() + 20
-        self.goto(self.xcor(), new_y_value)
+    def go_up(self):
+        new_y_position = self.ycor() + 20
+        self.goto(x=self.xcor(), y=new_y_position)
 
+    def reset_position(self):
+        self.goto(x_position, y_position)
 
