@@ -34,7 +34,6 @@ while game_is_on:
             print('Splat')
             scoreboard.game_over()
             player.reset_position()
-            game_is_on = False
 
     if player.ycor() > 290:
         player.reset_position()
