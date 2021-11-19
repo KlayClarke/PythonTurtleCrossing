@@ -9,7 +9,7 @@ class Scoreboard(Turtle):
         self.hideturtle()
         self.penup()
         self.goto(x=-150, y=270)
-        self.level = 0
+        self.level = 1
         with open('data.txt', mode='r') as data:
             self.high_level = int(data.read())
         self.write(arg=f'Level: {self.level} Highest Level: {self.high_level}' f'', align='center', move=False,
