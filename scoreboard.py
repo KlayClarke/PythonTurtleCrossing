@@ -30,6 +30,6 @@ class Scoreboard(Turtle):
 
     def game_over(self):
         self.clear()
-        self.level = 0
+        self.level = 1
         self.write(arg=f'Level: {self.level} Highest Level: {self.high_level}' f'', align='center', move=False,
                    font=FONT)
